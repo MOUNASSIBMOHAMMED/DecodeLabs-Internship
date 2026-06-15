@@ -2,7 +2,8 @@
   <img src="banner.png" alt="Gatekeeper Banner" width="100%">
 </p>
 
-# 🛡️ DecodeLabs Gatekeeper: Cloud-Native Password Threat Engine
+# 🛡️ DecodeLabs Gatekeeper
+### Intelligent Password Security Analyzer
 
 ## Project Overview
 
