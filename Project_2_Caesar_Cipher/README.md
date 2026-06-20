@@ -1,3 +1,4 @@
+![DecodeLabs Banner](./banner.png)
 # 🔐 DecodeLabs Enigma Engine  
 ### Classical Cryptography & Modern Block Cipher Implementation  
 
