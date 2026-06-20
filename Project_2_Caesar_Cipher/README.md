@@ -1,14 +1,161 @@
-🔐 DecodeLabs Enigma EngineClassical Cryptography & Modern Block Cipher ImplementationProject OverviewDecodeLabs Enigma Engine is a Python-based cryptographic toolset developed during my internship at DecodeLabs. The project practically demonstrates the evolution of data confidentiality by comparing the mathematical mechanics of classical substitution ciphers against modern enterprise block encryption standards.Unlike standard scripts that manually swap letters using hardcoded dictionaries, the Enigma Engine utilizes pure mathematical logic and zero-indexing to manipulate ASCII values. It then aggressively tests the vulnerabilities of these classical methods before transitioning to a military-grade Advanced Encryption Standard (AES) implementation to showcase how modern security solves architectural flaws.Background and MotivationThe initial objective of this internship project was to create a basic mathematical Caesar Cipher that could obfuscate text using a numeric shift key.While this approach met the minimum requirements for demonstrating symmetric encryption, I wanted to explore why classical ciphers are entirely obsolete in the modern computing era, and how actual enterprise systems handle data security. A Caesar cipher contains a fatal architectural flaw: an incredibly small key space (only 25 possible keys).To address this limitation and demonstrate a deeper understanding of cryptography, I redesigned the project into a three-part security pipeline. First, I built the required classical engine. Second, I engineered an automated brute-force attack script to exploit the classical cipher's small key space. Finally, I integrated the official Python cryptography library to build a modern AES-128 engine, utilizing real-world concepts like PKCS7 padding and Initialization Vectors (IVs).This transformation allowed the project to evolve from a simple academic math exercise into a comprehensive study of cryptographic vulnerabilities and modern block cipher architecture.Key FeaturesMathematical substitution cipher using modular arithmetic (% 26)Intelligent edge-case handling for spaces, numbers, and punctuationAutomated brute-force vulnerability testing and decryptionEnterprise-grade AES-128 block cipher implementationSecure cryptographic randomness using OS-level Initialization Vectors (IVs)PKCS7 padding for strict 16-byte block alignmentHow It WorksThe toolset evaluates the evolution of encryption through a three-stage pipeline.Stage 1: The Classical Engine (caesar.py)The application encrypts readable plaintext by converting characters into integers using Python's ord() function. It subtracts the base ASCII value to zero-index the alphabet, applies a cryptographic shift using modular arithmetic to ensure a perfect finite wrap, and converts the result back into characters.Stage 2: Vulnerability Exploitation (bruteforce.py)Because the classical engine only utilizes 25 possible shift keys, it is highly vulnerable. This script attacks intercepted ciphertexts by aggressively applying a reverse mathematical shift for every possible key simultaneously, allowing a standard CPU to crack the encryption and reveal the plaintext in a fraction of a millisecond.Stage 3: Modern Block Cryptography (aes_encrypting.py)To solve the brute-force vulnerability, data is encrypted using AES-128. Instead of shifting letters, the AES script processes raw data in 16-byte blocks. It automatically pads uneven message lengths and relies on complex bitwise XOR logic to create mathematical confusion and diffusion, expanding the key space to an uncrackable $3.4 \times 10^{38}$ combinations.Technologies UsedPython 3OS (os.urandom)Cryptography Library (Hazmat Primitives)Advanced Encryption Standard (AES)Cipher Block Chaining (CBC Mode)Project StructurePlaintextdecode-labs-internship/
+# 🔐 DecodeLabs Enigma Engine  
+### Classical Cryptography & Modern Block Cipher Implementation  
+
+---
+
+## 📌 Project Overview
+
+DecodeLabs Enigma Engine is a Python-based cryptographic toolset developed during my internship at DecodeLabs.
+
+The project demonstrates the evolution of data confidentiality by comparing classical substitution ciphers with modern block encryption standards.
+
+Unlike standard implementations that rely on hardcoded character mappings, this engine uses pure mathematical logic and zero-indexing to manipulate ASCII values. It then evaluates classical cipher weaknesses through brute-force analysis before transitioning into a modern AES-based encryption system.
+
+---
+
+## 🎯 Background and Motivation
+
+The initial goal of this internship project was to implement a basic mathematical Caesar Cipher to demonstrate symmetric encryption using a numeric shift key.
+
+While this satisfies the basic requirement, I explored deeper into why classical ciphers are considered obsolete in modern cybersecurity systems.
+
+A Caesar cipher has a critical weakness:  
+it contains an extremely small key space (only 25 possible keys), making it trivial to break.
+
+To better demonstrate real-world cryptographic principles, I expanded the project into a three-stage security pipeline:
+
+1. Implementation of the classical Caesar Cipher  
+2. Development of a brute-force attack to exploit its weaknesses  
+3. Integration of AES-128 encryption using industry standards  
+
+This transformation turned the project into a full study of cryptographic evolution, from insecure substitution systems to modern block cipher architectures.
+
+---
+
+## ⚙️ Key Features
+
+- Mathematical substitution cipher using modular arithmetic (% 26)  
+- Robust handling of spaces, numbers, and punctuation  
+- Automated brute-force attack simulation  
+- AES-128 block cipher implementation using the Python cryptography library  
+- Secure Initialization Vectors (IVs) generated via OS-level randomness  
+- PKCS7 padding for strict block alignment  
+
+---
+
+## 🧠 How It Works
+
+The toolset is structured into three progressive stages:
+
+---
+
+### 🔹 Stage 1: Classical Engine (`caesar.py`)
+
+The Caesar Cipher encrypts plaintext by converting characters into ASCII values using `ord()`.
+
+It then:
+- Applies zero-indexing to normalize alphabet positions  
+- Uses modular arithmetic to apply the shift  
+- Converts values back into characters  
+
+This ensures proper wrap-around behavior within the alphabet range.
+
+---
+
+### ⚠️ Stage 2: Vulnerability Exploitation (`bruteforce.py`)
+
+Due to its extremely limited key space (only 25 possible shifts), the Caesar Cipher is highly vulnerable.
+
+This script demonstrates a brute-force attack by:
+- Iterating through all possible shift values  
+- Decoding the ciphertext for each key  
+- Outputting all potential plaintext results  
+
+This shows that security based on small key spaces is fundamentally broken.
+
+---
+
+### 🔐 Stage 3: Modern Block Cryptography (`aes_encrypting.py`)
+
+To overcome classical limitations, the project implements AES-128 encryption.
+
+Unlike substitution ciphers, AES:
+- Processes data in 16-byte blocks  
+- Uses multiple rounds of transformation  
+- Applies XOR-based bitwise operations  
+- Ensures randomness using Initialization Vectors (IVs)  
+- Uses PKCS7 padding for proper block alignment  
+
+This expands the key space to approximately:  
+**3.4 × 10³⁸ possible combinations**, making brute-force attacks computationally infeasible.
+
+---
+
+## 🧰 Technologies Used
+
+- Python 3  
+- OS module (os.urandom)  
+- Cryptography Library (hazmat primitives)  
+- Advanced Encryption Standard (AES)  
+- Cipher Block Chaining (CBC Mode)  
+
+---
+
+## 📁 Project Structure
+
+
+decode-labs-internship/
 │
 ├── Project_2_Caesar_Cipher/
-│   ├── aes_encrypting.py
-│   ├── bruteforce.py
-│   ├── caesar.py
-│   └── README.md
-Installation and UsageInstall the required cryptographic dependencies:Bashpip install cryptography
-Clone the repository:Bashgit clone https://github.com/MOUNASSIBMOHAMMED/DecodeLabs-Internship.git
+│ ├── aes_encrypting.py
+│ ├── bruteforce.py
+│ ├── caesar.py
+│ └── README.md
+
+
+---
+
+## 🚀 Installation and Usage
+
+### 1. Install dependencies
+```bash
+pip install cryptography
+2. Clone repository
+git clone https://github.com/MOUNASSIBMOHAMMED/DecodeLabs-Internship.git
 cd DecodeLabs-Internship/Project_2_Caesar_Cipher
-Run the classical encryption engine:Bashpython caesar.py
-Run the automated brute-force attack:Bashpython bruteforce.py
-Run the enterprise AES-128 engine:Bashpython aes_encrypting.py
-Future ImprovementsSeveral enhancements could further expand the project's cryptographic capabilities:File encryption capabilities (reading and securing .txt or .pdf files)Hash-based Message Authentication Codes (HMAC) to ensure data integrityPublic Key Infrastructure (RSA) integration for asymmetric key exchangeA graphical user interface (GUI) for the AES-128 engineLearning OutcomesThis project provided valuable hands-on experience in mathematical logic and modern cryptography. Through its development, I gained practical knowledge in:ASCII manipulation and modular arithmeticSymmetric encryption limitations and brute-force vulnerabilitiesBlock cipher architecture and Cipher Block Chaining (CBC)True cryptographic randomness vs. pseudo-randomnessData padding strategies (PKCS7) for non-standard message lengthsMost importantly, this project taught me how to take a basic set of internship requirements and transform them into a comprehensive demonstration of the evolution of cybersecurity standards.AuthorMohammed Mounassib Cybersecurity Engineering StudentCybersecurity Intern at DecodeLabs🔗 GitHub: https://github.com/MOUNASSIBMOHAMMED🔗 LinkedIn: https://www.linkedin.com/in/mohammed-mounassib-093098171/
+3. Run Caesar Cipher
+python caesar.py
+4. Run brute-force attack
+python bruteforce.py
+5. Run AES encryption demo
+python aes_encrypting.py
+🚀 Future Improvements
+File encryption support (.txt, .pdf, etc.)
+HMAC-based integrity verification
+RSA asymmetric encryption integration
+Graphical User Interface (GUI) for AES tool
+Enhanced key management system
+📚 Learning Outcomes
+
+This project provided hands-on experience in both classical and modern cryptography.
+
+Key concepts learned include:
+
+ASCII manipulation and modular arithmetic
+Weaknesses of symmetric substitution ciphers
+Brute-force attack methodologies
+AES block cipher architecture
+CBC (Cipher Block Chaining) mode
+True cryptographic randomness vs pseudo-randomness
+PKCS7 padding for block alignment
+
+Most importantly, it demonstrated how to evolve a basic internship assignment into a full cryptographic study showing the transition from insecure classical systems to modern secure encryption standards.
+
+👨‍💻 Author
+
+Mohammed Mounassib
+Cybersecurity Engineering Student
+Cybersecurity Intern at DecodeLabs
+
+🔗 GitHub: https://github.com/MOUNASSIBMOHAMMED
+🔗 LinkedIn: https://www.linkedin.com/in/mohammed-mounassib-093098171/
