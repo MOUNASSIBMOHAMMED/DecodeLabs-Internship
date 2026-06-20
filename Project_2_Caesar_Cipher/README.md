@@ -67,10 +67,3 @@ python aes_encrypting.py
 
 ```
 
----
-
-*Built with discipline. Executed from the terminal.*
-
-```
-
-```
