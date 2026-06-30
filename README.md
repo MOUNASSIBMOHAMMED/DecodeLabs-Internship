@@ -20,3 +20,6 @@ A dual-layered cryptography project demonstrating the evolution from classical c
 
 ---
 *Built with discipline. Executed from the terminal.*
+🔒 **Project 3: Enterprise Phishing Triage Engine**
+
+An advanced, multi-layered threat detection system demonstrating the evolution from basic heuristic filtering to automated, API-integrated security operations. The engine utilizes Regex pattern matching, NLTK-based sentiment analysis, and real-time integration with global threat intelligence databases (VirusTotal) to identify, isolate, and log sophisticated phishing attacks including TOAD, Quishing, and BitB vectors.
