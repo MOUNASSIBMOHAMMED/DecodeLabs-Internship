@@ -1,0 +1,19 @@
+Return-Path: <attacker@offshore.xyz>
+From: "HR Department" <hr@company.com>
+Subject: 2026 Healthcare Benefits Questionnaire
+Date: Tue, 30 Jun 2026 11:45:00 -0400
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary123"
+
+--boundary123
+Content-Type: text/plain; charset="utf-8"
+
+Please scan the QR code attached to view your new W2 statement.
+Log into your paypаl account to verify the changes.
+
+--boundary123
+Content-Type: image/png; name="qr_code.png"
+Content-Disposition: attachment; filename="qr_code.png"
+
+[Fake image data]
+--boundary123--
