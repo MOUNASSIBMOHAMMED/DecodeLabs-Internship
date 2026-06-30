@@ -1,4 +1,4 @@
-This version is designed to be comprehensive and professional, perfect for a high-level cybersecurity portfolio. It dives into the "why" and "how" of your security logic.
+
 
 ---
 
