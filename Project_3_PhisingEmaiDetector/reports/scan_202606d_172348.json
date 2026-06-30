@@ -1,0 +1,22 @@
+{
+    "scan_timestamp": "2026-06-30T17:23:48.474963",
+    "verdict": "MALICIOUS",
+    "risk_score": 80,
+    "headers": {
+        "From": "HR Department <hr@company.com>",
+        "Return-Path": "<attacker@offshore.xyz>",
+        "Subject": "2026 Healthcare Benefits Questionnaire",
+        "Date": "Tue, 30 Jun 2026 11:45:00 -0400"
+    },
+    "auth_results": {
+        "SPF": "Unknown",
+        "DKIM": "Unknown",
+        "DMARC": "Unknown"
+    },
+    "extracted_urls": [],
+    "indicators_of_compromise": [
+        "[MEDIUM] Contextual Heuristic: Phishing indicator triggered -> 'w2 statement'",
+        "[MEDIUM] Contextual Heuristic: Phishing indicator triggered -> 'qr code'",
+        "[CRITICAL] Quishing: Image attachment detected with QR scanning instructions."
+    ]
+}

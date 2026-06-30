@@ -1,1 +1,24 @@
-
+{
+    "scan_timestamp": "2026-06-30T17:23:35.759349",
+    "verdict": "MALICIOUS",
+    "risk_score": 135,
+    "headers": {
+        "From": "IT Security <security@decodelabs.tech>",
+        "Return-Path": "<hacker@darkweb.ru>",
+        "Subject": "URGENT: Network Compromise",
+        "Date": "Tue, 30 Jun 2026 10:30:00 -0400"
+    },
+    "auth_results": {
+        "SPF": "Unknown",
+        "DKIM": "Unknown",
+        "DMARC": "Unknown"
+    },
+    "extracted_urls": [],
+    "indicators_of_compromise": [
+        "[HIGH] Obfuscation: Hidden Base64 string payload -> mj-\u0720*:L\u007fn=\u079f7G\u001d0...",
+        "[HIGH] Obfuscation: Hidden Base64 string payload -> https://malicious-domain.com/steal_creds...",
+        "[CRITICAL] Signature Match: Bitcoin Wallet pattern identified.",
+        "[MEDIUM] Contextual Heuristic: Phishing indicator triggered -> 'wire transfer'",
+        "[MEDIUM] Contextual Heuristic: Phishing indicator triggered -> 'password expired'"
+    ]
+}
